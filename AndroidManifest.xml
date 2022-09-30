@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dktechnology.pdfreader">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/pdf_logo"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/pdf_logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.PDFReader">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".pdfView"
+            android:exported="true">
+
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:mimeType="application/pdf"
+                    android:scheme="file" />
+                <data
+                    android:mimeType="application/pdf"
+                    android:scheme="content" />
+            </intent-filter>
+
+
+        </activity>
+        <activity
+            android:name=".Initialization"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                    <action android:name="com.example.project.SHOW_CURRENT" />
+                    <action android:name="com.example.project.SHOW_RECENT" />
+                    <action android:name="com.example.project.SHOW_PENDING" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
